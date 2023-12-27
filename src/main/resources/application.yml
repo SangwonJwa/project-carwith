@@ -1,0 +1,33 @@
+spring:
+  jpa:
+    database: mysql
+    hibernate:
+      ddl-auto: create
+    database-platform: org.hibernate.dialect.MySQLDialect
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/carwith
+    username: root
+    password: tkwkajfl147!
+
+  profiles:
+    active: local
+    include: oauth
+
+app:
+  auth:
+    tokenSecret: TOKEN_SECRET
+    tokenExpiry: 1800000
+    refreshTokenExpiry: 6048000000
+  oauth2:
+    authorizedRedirectUris:
+      - http://localhost:3000/oauth/redirect
+
+logging:
+  level:
+    org.hibernate: debug
