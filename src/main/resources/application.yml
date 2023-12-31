@@ -15,19 +15,19 @@ spring:
     username: root
     password: tkwkajfl147!
 
-  profiles:
-    active: local
-    include: oauth
+#  profiles:
+#    active: local
+#    include: oauth
+#
+#app:
+#  auth:
+#    tokenSecret: TOKEN_SECRET
+#    tokenExpiry: 1800000
+#    refreshTokenExpiry: 6048000000
+#  oauth2:
+#    authorizedRedirectUris:
+#      - http://localhost:3000/oauth/redirect
 
-app:
-  auth:
-    tokenSecret: TOKEN_SECRET
-    tokenExpiry: 1800000
-    refreshTokenExpiry: 6048000000
-  oauth2:
-    authorizedRedirectUris:
-      - http://localhost:3000/oauth/redirect
-
-logging:
-  level:
-    org.hibernate: debug
+#logging:
+#  level:
+#    org.hibernate: debug
