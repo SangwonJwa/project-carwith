@@ -41,16 +41,21 @@ public class User implements UserDetails {
     @Column(length = 1)
     private String gender;
 
+    @Column(name = "nickname", unique = true)
+    private String nickname;
+
     @Builder
     public User(String email, String password,
                 String name, String phoneNumber,
-                String imageUrl, String gender){
+                String imageUrl, String gender,
+                String nickname){
         this.email = email;
         this.password = password;
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.imageUrl = imageUrl;
         this.gender = gender;
+        this.nickname = nickname;
     }
 
     public User update(String name,
@@ -59,6 +64,12 @@ public class User implements UserDetails {
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.imageUrl = imageUrl;
+
+        return this;
+    }
+
+    public User update(String nickname){
+        this.nickname = nickname;
 
         return this;
     }
