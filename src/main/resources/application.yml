@@ -19,6 +19,11 @@ spring:
 #    active: local
 #    include: oauth
 #
+
+jwt:
+  issuer: jwa4610@gmail.com
+  secret_key: carwith-project-by-sangwonjwa
+
 #app:
 #  auth:
 #    tokenSecret: TOKEN_SECRET

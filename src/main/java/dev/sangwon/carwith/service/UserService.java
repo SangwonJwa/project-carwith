@@ -2,8 +2,6 @@ package dev.sangwon.carwith.service;
 
 import dev.sangwon.carwith.domain.User;
 import dev.sangwon.carwith.dto.AddUserRequest;
-import dev.sangwon.carwith.exception.DuplicateEmailException;
-import dev.sangwon.carwith.exception.DuplicatePhoneNumberException;
 import dev.sangwon.carwith.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -28,10 +26,14 @@ public class UserService {
                 ).getId();
     }
 
+    public User findById(Long userId){
+        return userRepository.findById(userId)
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected user"));
+    }
+
     public boolean isEmailDuplicate(String email){
         return userRepository.existsByEmail(email);
     }
-
     public boolean isPhoneNumberDuplicate(String phoneNumber){
         return userRepository.existsByPhoneNumber(phoneNumber);
     }
