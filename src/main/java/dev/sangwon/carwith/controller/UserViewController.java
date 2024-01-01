@@ -11,6 +11,11 @@ public class UserViewController {
         return "login";
     }
 
+    @GetMapping("/socialLogin")
+    public String socialLogin(){
+        return "socialLogin";
+    }
+
     @GetMapping("/signup")
     public String signup(){
         return "signup";

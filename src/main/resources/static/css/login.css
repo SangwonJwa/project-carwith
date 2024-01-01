@@ -18,6 +18,7 @@ body {
 h1 {
     font-weight: bold;
     margin: 0;
+    text-align: center;
 }
 
 h2 {
@@ -69,6 +70,7 @@ button.ghost {
     border-color: #FFFFFF;
 }
 
+
 form {
     background-color: #FFFFFF;
     display: flex;
@@ -79,6 +81,8 @@ form {
     height: 100%;
     text-align: center;
 }
+
+
 
 input {
     background-color: #eee;
@@ -275,5 +279,16 @@ label {
     border: 1px solid #FF4B2B;
     border-radius: 4px;
     cursor: pointer;
+}
+
+.oauth-container{
+    padding-top: 20%;
+    padding-bottom: 20%;
+    height: 100%;
+
+}
+
+.oauth-image{
+    padding-left: 27%;
 }
 

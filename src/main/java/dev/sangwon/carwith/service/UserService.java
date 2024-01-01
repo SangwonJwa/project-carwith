@@ -12,13 +12,14 @@ import org.springframework.stereotype.Service;
 public class UserService {
 
     private final UserRepository userRepository;
-    private final BCryptPasswordEncoder bCryptPasswordEncoder;
 
     public Long signUp(AddUserRequest requestDTO){
 
+        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+
         return userRepository.save(User.builder()
                 .email(requestDTO.getEmail())
-                .password(bCryptPasswordEncoder.encode(requestDTO.getPassword()))
+                .password(encoder.encode(requestDTO.getPassword()))
                 .name(requestDTO.getName())
                 .phoneNumber(requestDTO.getPhoneNumber())
                 .gender(requestDTO.getGender())
@@ -28,6 +29,11 @@ public class UserService {
 
     public User findById(Long userId){
         return userRepository.findById(userId)
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected user"));
+    }
+
+    public User findByEmail(String email){
+        return userRepository.findByEmail(email)
                 .orElseThrow(() -> new IllegalArgumentException("Unexpected user"));
     }
 

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>로그인 페이지</title>
-    <link rel="stylesheet" type="text/css" href="/css/login.css">
+    <link rel="stylesheet" type="text/css" href="css/login.css">
 </head>
 <body>
 
@@ -17,10 +17,10 @@
       <input type="email" placeholder="Email" name="username" required/>
       <input type="password" placeholder="Password" name="password" required/>
 <!--      TODO: viewcontroller 만들어서 비밀번호 찾기-->
-      <a href="findpassword.html">비밀번호 찾기</a>
-      <button type="submit">로그인</button>
+      <a href="/findPassword">비밀번호 찾기</a>
+      <button type="submit" style="cursor: pointer">로그인</button>
 <!--      TODO: viewcontroller 만들어서 소셜 로그인-->
-      <a href="sociallogin.html">다른 소셜 계정으로 로그인하기</a>
+      <a href="/socialLogin">다른 소셜 계정으로 로그인하기</a>
     </form>
   </div>
 
@@ -29,7 +29,7 @@
       <div class="overlay-panel overlay-right">
         <h1>당신의 새로운 WITH 찾아보세요!</h1>
         &nbsp;
-        <button type="button" class="ghost" id="signUp" onclick="location.href='/signup'">회원가입</button>
+        <button style="cursor: pointer" type="button" class="ghost" id="signUp" onclick="location.href='/signup'">회원가입</button>
       </div>
     </div>
   </div>
