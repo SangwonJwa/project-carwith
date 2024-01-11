@@ -4,8 +4,6 @@ import dev.sangwon.carwith.config.jwt.TokenProvider;
 import dev.sangwon.carwith.config.oauth.OAuth2AuthorizationRequestBasedOnCookieRepository;
 import dev.sangwon.carwith.config.oauth.OAuth2SuccessHandler;
 import dev.sangwon.carwith.config.oauth.OAuth2UserCustomService;
-import dev.sangwon.carwith.repository.RefreshTokenRepository;
-import dev.sangwon.carwith.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -25,8 +23,6 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 public class WebSecurityConfig {
     private final OAuth2UserCustomService oAuth2UserCustomService;
     private final TokenProvider tokenProvider;
-    private final RefreshTokenRepository refreshTokenRepository;
-    private final UserService userService;
 
     @Bean
     public WebSecurityCustomizer configure(){
@@ -73,21 +69,17 @@ public class WebSecurityConfig {
 
     @Bean
     public OAuth2SuccessHandler oAuth2SuccessHandler() {
-        return new OAuth2SuccessHandler(tokenProvider,
-                refreshTokenRepository,
-                oAuth2AuthorizationRequestBasedOnCookieRepository(),
-                userService
-        );
+        return null;
     }
 
     @Bean
     public TokenAuthenticationFilter tokenAuthenticationFilter() {
-        return new TokenAuthenticationFilter(tokenProvider);
+        return null;
     }
 
     @Bean
     public OAuth2AuthorizationRequestBasedOnCookieRepository oAuth2AuthorizationRequestBasedOnCookieRepository() {
-        return new OAuth2AuthorizationRequestBasedOnCookieRepository();
+        return null;
     }
 
     @Bean
