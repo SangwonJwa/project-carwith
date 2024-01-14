@@ -2,7 +2,7 @@ spring:
   jpa:
     database: mysql
     hibernate:
-      ddl-auto: create
+      ddl-auto: create-drop
     database-platform: org.hibernate.dialect.MySQLDialect
     show-sql: true
     properties:
@@ -21,7 +21,7 @@ spring:
 
 jwt:
   issuer: jwa4610@gmail.com
-  secret_key: carwith-project-by-sangwonjwa
+  secret_key: project-carwith-EJNN235MS&KST25MN245
 
 #app:
 #  auth:
