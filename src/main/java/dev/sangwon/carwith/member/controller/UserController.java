@@ -29,6 +29,11 @@ public class UserController {
         return "Welcome to Spring Security tutorial";
     }
 
+    @GetMapping("/nothing")
+    public void nothing(){
+
+    }
+
     @PostMapping("/login")
     public String login(@RequestBody AuthRequest authRequest){
         Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(authRequest.getEmail(), authRequest.getPassword()));
