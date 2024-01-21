@@ -29,7 +29,7 @@ public class UserController {
         return "Welcome to Spring Security tutorial";
     }
 
-    @GetMapping("/nothing")
+    @GetMapping("/nothing2")
     public void nothing(){
 
     }
